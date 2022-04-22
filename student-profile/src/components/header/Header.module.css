@@ -1,0 +1,21 @@
+.container{
+    background-color: #16c1ee;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link {
+    padding: 5px;
+    text-decoration: none;
+    color:yellow;
+}
+
+.link:hover{
+    transform: scale(1.2);
+}
+.container p{
+    margin: 0;
+    padding: 0;
+}

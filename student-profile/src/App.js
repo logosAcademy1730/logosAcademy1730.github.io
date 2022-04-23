@@ -6,6 +6,8 @@ import MentorPage from "./pages/mentor/MentorPage";
 import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
+import Spivakov from "./pages/spivakov/Spivakov";
+
 
 const App = () => {
     const path = useLocation().pathname;
@@ -21,6 +23,7 @@ const App = () => {
           <Route path={RouteConst.MAIN} element={<MainPage />}/>
           <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />}/>
           <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />}/>
+          <Route path={RouteConst.SPIVAKOV} element={<Spivakov />}/>
           <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE}/>}/>
       </Routes>
 

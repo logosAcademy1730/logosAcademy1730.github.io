@@ -7,6 +7,9 @@ const Header = () => {
     <div className={styles.container}>
       <Link className={styles.link} to={RouteConst.MAIN}>Home</Link>
       <Link className={styles.link} to={RouteConst.MENTOR}>Mentor</Link>
+        <Link className={styles.link} to={RouteConst.INFO}>Info</Link>
+
+      <Link className={styles.link} to={RouteConst.MARIANA}>Mariana</Link>
     </div>
   );
 };

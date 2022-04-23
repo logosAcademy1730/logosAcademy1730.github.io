@@ -7,7 +7,6 @@ import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import Info from "./pages/Info/Info";
-
 const App = () => {
     const path = useLocation().pathname;
     const showNavbar = () => {

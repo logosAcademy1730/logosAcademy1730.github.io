@@ -8,10 +8,18 @@ import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import Info from "./pages/Info/Info";
 import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
+import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+
+
+import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 
 const App = () => {
     const path = useLocation().pathname;
     const showNavbar = () => {
+       return path === RouteConst.MAIN || path.includes(RouteConst.MENTOR) || path.includes(RouteConst.HRYHORIEV)
+       return path === RouteConst.MAIN || path.includes(RouteConst.MENTOR) || path.includes(RouteConst.MARIANA)
+
+
        return path === RouteConst.MAIN || path.includes(RouteConst.MENTOR) || path.includes(RouteConst.INFO) || path.includes(RouteConst.HRYHORIEV)
     }
 
@@ -25,6 +33,8 @@ const App = () => {
           <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />}/>
           <Route path={RouteConst.INFO} element={<Info />}/>
           <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE}/>}/>
+
+          <Route path={RouteConst.MARIANA} element={<MarianaBatig />}/>
       </Routes>
 
 

@@ -8,6 +8,8 @@ import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import Info from "./pages/Info/Info";
 import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
+import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+
 
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 

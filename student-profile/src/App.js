@@ -6,23 +6,24 @@ import MentorPage from "./pages/mentor/MentorPage";
 import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
+import Info from "./pages/Info/Info";
 import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 
 const App = () => {
     const path = useLocation().pathname;
     const showNavbar = () => {
-       return path === RouteConst.MAIN || path.includes(RouteConst.MENTOR) || path.includes(RouteConst.HRYHORIEV)
+       return path === RouteConst.MAIN || path.includes(RouteConst.MENTOR) || path.includes(RouteConst.INFO) || path.includes(RouteConst.HRYHORIEV)
     }
 
   return (
     <div className="App">
-      {/*<p>Mariia Lipinska</p>*/}
         {showNavbar() && <Header />}
       <Routes>
           <Route path={RouteConst.MAIN} element={<MainPage />}/>
           <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />}/>
           <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />}/>
           <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />}/>
+          <Route path={RouteConst.INFO} element={<Info />}/>
           <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE}/>}/>
       </Routes>
 

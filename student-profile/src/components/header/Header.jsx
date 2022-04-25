@@ -7,6 +7,7 @@ const Header = () => {
     <div className={styles.container}>
       <Link className={styles.link} to={RouteConst.MAIN}>Home</Link>
       <Link className={styles.link} to={RouteConst.MENTOR}>Mentor</Link>
+        <Link className={styles.link} to={RouteConst.HRYHORIEV}>Hryhoriev</Link>
     </div>
   );
 };

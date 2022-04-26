@@ -1,4 +1,4 @@
-import styles from "./MentorPage.module.scss";
+import styles from "./MentorPage.module.css";
 import { Routes, Route, useParams } from "react-router-dom";
 import { useEffect } from "react";
 

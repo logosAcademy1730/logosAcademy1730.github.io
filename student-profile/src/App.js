@@ -34,6 +34,7 @@ const App = () => {
       case RouteConst.INFO:
       case RouteConst.HRYHORIEV:
       case RouteConst.MARIANA:
+      case RouteConst.SPIVAKOV:
         return false;
       default:
         return true;
@@ -47,7 +48,7 @@ const App = () => {
           <Route path={RouteConst.MAIN} element={<MainPage />}/>
           <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />}/>
           <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />}/>
-          <Route path={RouteConst.SPIVAKOV} element={<Spivakov />}/>
+          <Route path={RouteConst.SPIVAKOV_Nested} element={<Spivakov />}/>
           <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE}/>}/>
         <Route path={RouteConst.MAIN} element={<MainPage />} />
 

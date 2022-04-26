@@ -4,6 +4,7 @@ export const RouteConst = {
     MENTOR_Nested: "/mentor/*",
     NOT_FOUND_PAGE: "/404",
     SPIVAKOV: "/spivakov",
+    SPIVAKOV_Nested: "/spivakov/*",
     INFO : "/Info",
     HRYHORIEV: "/hryhoriev",
     MARIANA: "/mariana"

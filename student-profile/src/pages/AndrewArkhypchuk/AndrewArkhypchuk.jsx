@@ -8,7 +8,7 @@ const AndrewArkhypchuk = () => {
         </div>
             <div >
             <div>
-                <img src={myphoto} />
+                <img alt="my foto" className={classes.img} src={myphoto} />
             </div>
             <div>
     <p> Hi my name is Andrew,a have 8 months experience with Front End development,

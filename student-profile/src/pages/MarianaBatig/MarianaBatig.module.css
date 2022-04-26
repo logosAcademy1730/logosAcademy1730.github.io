@@ -1,0 +1,27 @@
+body {
+
+    background-color: #0dec0d;
+    height: 90vh;
+}
+h1{
+    text-align: center;
+}
+
+
+.bigBlock{
+    /*width: 500px;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+.containerOne img {
+    width: 320px;
+    height: 400px;
+}
+
+.containerTwo{
+    width: 400px;
+}

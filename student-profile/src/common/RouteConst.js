@@ -3,5 +3,8 @@ export const RouteConst = {
     MENTOR: "/mentor",
     MENTOR_Nested: "/mentor/*",
     NOT_FOUND_PAGE: "/404",
-    SPIVAKOV: "/spivakov"
+    SPIVAKOV: "/spivakov",
+    INFO : "/Info",
+    HRYHORIEV: "/hryhoriev",
+    MARIANA: "/mariana"
 }

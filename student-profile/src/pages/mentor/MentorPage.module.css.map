@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,gBAAgB,EAAE,MAAM;EACxB,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "MentorPage.module.scss"
+    ],
+    "names": [],
+    "file": "MentorPage.module.css"
+}

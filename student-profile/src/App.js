@@ -12,6 +12,8 @@ import MentorPage from "./pages/mentor/MentorPage";
 import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
+import Spivakov from "./pages/spivakov/Spivakov";
+
 import Info from "./pages/Info/Info";
 import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
@@ -32,6 +34,7 @@ const App = () => {
       case RouteConst.INFO:
       case RouteConst.HRYHORIEV:
       case RouteConst.MARIANA:
+      case RouteConst.SPIVAKOV:
         return false;
       default:
         return true;
@@ -42,6 +45,11 @@ const App = () => {
     <div className="App">
       {showNavbar() && <Header />}
       <Routes>
+          <Route path={RouteConst.MAIN} element={<MainPage />}/>
+          <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />}/>
+          <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />}/>
+          <Route path={RouteConst.SPIVAKOV_Nested} element={<Spivakov />}/>
+          <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE}/>}/>
         <Route path={RouteConst.MAIN} element={<MainPage />} />
 
         {/*<Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>*/}

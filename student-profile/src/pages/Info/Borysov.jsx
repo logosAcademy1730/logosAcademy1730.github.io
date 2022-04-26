@@ -1,8 +1,8 @@
 import React from "react";
-import style from './Info.module.css'
-import photo from "./image/photo2.png"
-const Info = () => {
+import style from "./Borysov.module.css";
+import photo from "./image/photo2.png";
 
+const Borysov = () => {
     return(
         <section className={style.section}>
             <header className={style.header}>
@@ -17,10 +17,10 @@ const Info = () => {
                             hi, i'm a developer trying to learn everything new and improve my skills.
                         </p>
                         <div className={style.hero__links}>
-                            <a className={style.hero__link} target={'_blank'} href={'#'}><i className='bx bxl-facebook'></i></a>
-                            <a className={style.hero__link} target={'_blank'} href={"https://www.instagram.com/xzvcursed/"}><i className='bx bxl-instagram'></i></a>
-                            <a className={style.hero__link} target={'_blank'} href={'#'}><i className='bx bxl-pinterest'></i></a>
-                            <a className={style.hero__link} target={'_blank'} href={'https://github.com/exlymex'}><i className='bx bxl-github'></i></a>
+                            <a className={style.hero__link} target={'_blank'} href={'#'}><i className='bx bxl-facebook icon'  id={style.bx__first}></i></a>
+                            <a className={style.hero__link} target={'_blank'} href={"https://www.instagram.com/xzvcursed/"}><i className='bx bxl-instagram icon' id={style.bx__second}></i></a>
+                            <a className={style.hero__link} target={'_blank'} href={'#'}><i className='bx bxl-pinterest icon' id={style.bx__third}></i></a>
+                            <a className={style.hero__link} target={'_blank'} href={'https://github.com/exlymex'}><i className={`bx bxl-github`} id={style.bx__fouth}></i></a>
                         </div>
 
                     </div>
@@ -33,5 +33,4 @@ const Info = () => {
         </section>
     )
 }
-
-export default Info
+export default Borysov

@@ -17,6 +17,7 @@ import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
+import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 
 const App = () => {
   const path = useLocation().pathname;
@@ -66,6 +67,7 @@ const App = () => {
         <Route path={RouteConst.INFO} element={<Info />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
         <Route path={RouteConst.MARIANA} element={<MarianaBatig />} />
+        <Route path={RouteConst.MARIIA} element={<MariiaLipinska/>} />
       </Routes>
     </div>
   );

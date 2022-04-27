@@ -22,7 +22,7 @@ import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 const App = () => {
   const path = useLocation().pathname;
   useEffect(() => {
-    // localStorage.setItem("user", JSON.stringify({ role: "user" }));
+    localStorage.setItem("user", JSON.stringify({ role: "admin" }));
   }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -33,6 +33,7 @@ const App = () => {
       case RouteConst.INFO:
       case RouteConst.HRYHORIEV:
       case RouteConst.MARIANA:
+      case RouteConst.ANDREW:
         return false;
       default:
         return true;
@@ -45,17 +46,17 @@ const App = () => {
       <Routes>
         <Route path={RouteConst.MAIN} element={<MainPage />} />
 
-        {/*<Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>*/}
-        {/*  <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />*/}
-        {/*</Route>*/}
+        <Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>
+          <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
+        </Route>
 
-        <Route
-          element={
-            <PrivateRoute isAllowed={user?.role === "admin"}>
-              <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
-            </PrivateRoute>
-          }
-        />
+        {/*<Route*/}
+        {/*  element={*/}
+        {/*    <PrivateRoute isAllowed={user?.role === "admin"}>*/}
+        {/*      <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />*/}
+        {/*    </PrivateRoute>*/}
+        {/*  }*/}
+        {/*/>*/}
         {/*<Route element={<PrivateRoute isAllowed={user?.role} />}>*/}
         {/*  <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />*/}
         {/*</Route>*/}

@@ -17,18 +17,19 @@ import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
+import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 
 const App = () => {
   const path = useLocation().pathname;
   useEffect(() => {
-    localStorage.setItem("user", JSON.stringify({ role: "user" }));
+    localStorage.setItem("user", JSON.stringify({ role: "admin" }));
   }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));
   const showNavbar = () => {
     switch (path) {
       case RouteConst.MENTOR:
-      case RouteConst.BORYSOV:
+      case RouteConst.INFO:
       case RouteConst.HRYHORIEV:
       case RouteConst.MARIANA:
         return false;
@@ -39,7 +40,6 @@ const App = () => {
   return (
     <div className="App">
       {showNavbar() && <Header />}
-
       <Routes>
         <Route path={RouteConst.MAIN} element={<MainPage />} />
 
@@ -54,10 +54,22 @@ const App = () => {
             </PrivateRoute>
           }
         />
+        <Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>
+          <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
+        </Route>
+
+        {/*<Route*/}
+        {/*  element={*/}
+        {/*    <PrivateRoute isAllowed={user?.role === "admin"}>*/}
+        {/*      <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />*/}
+        {/*    </PrivateRoute>*/}
+        {/*  }*/}
+        {/*/>*/}
         {/*<Route element={<PrivateRoute isAllowed={user?.role} />}>*/}
         {/*  <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />*/}
         {/*</Route>*/}
         <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
+        <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />

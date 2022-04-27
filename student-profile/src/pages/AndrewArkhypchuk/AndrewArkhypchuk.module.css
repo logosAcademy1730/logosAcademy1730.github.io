@@ -1,0 +1,24 @@
+body {
+
+    background-color:darkslategrey;
+    height: 90vh;
+}
+h1{
+    text-align: center;
+}
+container{
+    width:90%;
+    margin:0 auto;
+    border:2px dashed black
+}
+
+
+
+.img {
+    width: 320px;
+    height: 400px;
+}
+
+.containerTwo{
+    width: 400px;
+}

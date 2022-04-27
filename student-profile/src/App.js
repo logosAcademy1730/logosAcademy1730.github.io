@@ -14,7 +14,7 @@ import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import Info from "./pages/Info/Info";
 import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
-import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+import MarianaBatigPage from "./pages/MarianaBatig/MarianaBatigPage";
 import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
 
@@ -65,7 +65,7 @@ const App = () => {
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.INFO} element={<Info />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
-        <Route path={RouteConst.MARIANA} element={<MarianaBatig />} />
+        <Route path={RouteConst.MARIANA_Nested} element={<MarianaBatigPage />} />
       </Routes>
     </div>
   );

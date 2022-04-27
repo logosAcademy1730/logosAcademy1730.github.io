@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import MainPage from "./pages/main/MainPage";
 import {
@@ -17,6 +17,7 @@ import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
+import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 
 const App = () => {
   const path = useLocation().pathname;
@@ -61,7 +62,7 @@ const App = () => {
 
 
         <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
-
+        <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.INFO} element={<Info />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />

@@ -18,6 +18,7 @@ const MentorPage = () => {
       <h1> MentorPage</h1>
       <h1> MentorPage</h1>
       <h1> MentorPage</h1>
+        <h1>Mentor Page</h1>
     </div>
   );
 };

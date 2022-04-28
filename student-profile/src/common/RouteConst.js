@@ -6,5 +6,6 @@ export const RouteConst = {
     INFO : "/Info",
     HRYHORIEV: "/hryhoriev",
     MARIANA: "/mariana",
+    ANDREW:"/andrew",
     MARIIA: "/mariia"
 }

@@ -235,10 +235,8 @@ const BorysovContainer = () => {
         }
     ])
     const randomPerson = Math.floor(Math.random() * users.length)
-    const deleteUser = (key) => {
-       users.splice(key,1)
-        setUser([...users])
-         // setUser(users => users.filter(user =>  user.key  !== key))
+    const deleteUser = (id) => {
+         setUser(users => users.filter(user =>  user.id  !== id))
     }
     const addUser = () => {
      setUser([...users, {
@@ -248,7 +246,7 @@ const BorysovContainer = () => {
     return(
         <div>
             <div onClick={addUser} className={a.add__button}>Add</div>
-            {users.map((user,key) => <BorysovPresentation myKey = {key} user = {user} key = {key}  deleteUser = {deleteUser}/>)}
+            {users.map((user,index) => <BorysovPresentation place={index + 1} id={user.id} user={user} key={user.id}  deleteUser={deleteUser}/>)}
         </div>
     )
 }

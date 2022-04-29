@@ -1,5 +1,6 @@
 
 import "./App.css";
+import "rsuite/dist/rsuite.min.css";
 import MainPage from "./pages/main/MainPage";
 import {
   BrowserRouter,
@@ -26,7 +27,7 @@ const App = () => {
   }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user);
+  // console.log(user);
   const showNavbar = () => {
     switch (path) {
       case RouteConst.MENTOR:

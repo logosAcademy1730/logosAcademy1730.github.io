@@ -2,6 +2,7 @@ import "./SpivakovStyles.css";
 import { useState } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import ShowUsers from "./users/showUsers";
 
 
 const Spivakov = () => {
@@ -63,10 +64,12 @@ const Spivakov = () => {
                   go back
                 </button>
                 FORM
+                <ShowUsers/>
               </h1>
             }
           />
         </Routes>
+        
       </div>
     </div>
   );

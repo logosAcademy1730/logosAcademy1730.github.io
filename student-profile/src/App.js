@@ -1,5 +1,6 @@
-import logo from "./logo.svg";
+
 import "./App.css";
+import "rsuite/dist/rsuite.min.css";
 import MainPage from "./pages/main/MainPage";
 import {
   BrowserRouter,
@@ -26,34 +27,26 @@ const App = () => {
   }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));
+  // console.log(user);
   const showNavbar = () => {
     switch (path) {
       case RouteConst.MENTOR:
       case RouteConst.INFO:
       case RouteConst.HRYHORIEV:
       case RouteConst.MARIANA:
+      case RouteConst.ANDREW:
         return false;
       default:
         return true;
     }
   };
+
   return (
     <div className="App">
       {showNavbar() && <Header />}
       <Routes>
         <Route path={RouteConst.MAIN} element={<MainPage />} />
 
-        {/*<Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>*/}
-        {/*  <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />*/}
-        {/*</Route>*/}
-
-        <Route
-          element={
-            <PrivateRoute isAllowed={user?.role === "user"}>
-              <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
-            </PrivateRoute>
-          }
-        />
         <Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>
           <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
         </Route>
@@ -68,6 +61,8 @@ const App = () => {
         {/*<Route element={<PrivateRoute isAllowed={user?.role} />}>*/}
         {/*  <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />*/}
         {/*</Route>*/}
+
+
         <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
         <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />

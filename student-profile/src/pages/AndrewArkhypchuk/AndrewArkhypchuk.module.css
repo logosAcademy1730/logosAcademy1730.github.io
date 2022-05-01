@@ -13,12 +13,28 @@ container{
 }
 
 
-
+.white{
+    color:whitesmoke;
+    font-size: 20px;
+}
 .img {
     width: 320px;
-    height: 400px;
+    height: 320px;
+    border-radius: 50%;
+    transition-duration: 0.3s;
 }
+.img:hover{
+    width: 350px;
+    height: 350px;
+}
+
 
 .containerTwo{
     width: 400px;
+}
+.list{
+    border:3px solid whitesmoke;
+    width:300px;
+    border-radius: 10px;
+    margin: 0 auto;
 }

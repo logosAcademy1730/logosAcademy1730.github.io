@@ -23,6 +23,9 @@ const Header = () => {
         <Link className={styles.link} to={RouteConst.ANDREW}>
             Andrew
         </Link>
+        <Link className={styles.link} to={RouteConst.MARIIA}>
+            Mariia
+        </Link>
     </div>
   );
 };

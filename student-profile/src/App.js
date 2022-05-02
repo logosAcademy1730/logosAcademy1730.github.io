@@ -13,7 +13,7 @@ import MentorPage from "./pages/mentor/MentorPage";
 import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
-import Info from "./pages/Info/Info";
+import BorysovPage from "./pages/Info/BorysovPage";
 import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import { useEffect } from "react";
@@ -71,7 +71,7 @@ const App = () => {
         <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
         <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
-        <Route path={RouteConst.INFO} element={<Info />} />
+        <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
         <Route path={RouteConst.MARIANA} element={<MarianaBatig />} />
         <Route path={RouteConst.MARIIA} element={<MariiaLipinska/>} />

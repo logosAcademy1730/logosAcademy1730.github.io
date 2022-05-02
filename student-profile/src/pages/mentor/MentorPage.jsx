@@ -45,8 +45,11 @@ const MentorPage = () => {
     const formRef = useRef();
     const [formError, setFormError] = useState({});
     const [formValue, setFormValue] = useState({
-        name: "Ihor",
+
+
+
         age: 35,
+        name: "Ihor",
         position: "mentor",
     });
 

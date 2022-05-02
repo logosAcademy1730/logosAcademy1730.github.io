@@ -1,0 +1,32 @@
+.container{
+    justify-content: center;
+    display: flex;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 15px 0;
+    height: 100px;
+    width: 60%;
+    background-color: #0ec0a5;
+}
+.add__button{
+    position: absolute;
+    cursor: pointer;
+    height: 50px;
+    width: 7%;
+    background-color: brown;
+    border-radius: 15px;
+}
+.delete__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    width: 7%;
+    background-color: darksalmon;
+    border-radius: 15px;
+}

@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
 import BorysovPresentation from "./BorysovPresentation";
+import { v4 as uuidv4 } from 'uuid';
 import a from "./a.module.css";
 const BorysovContainer = () => {
     const [users,setUser] = useState([
         {
-            "id": 1,
+            "id": uuidv4(),
             "name": "Leanne Graham",
             "username": "Bret",
             "email": "Sincere@april.biz",
@@ -27,7 +28,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 2,
+            "id": uuidv4(),
             "name": "Ervin Howell",
             "username": "Antonette",
             "email": "Shanna@melissa.tv",
@@ -50,7 +51,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 3,
+            "id": uuidv4(),
             "name": "Clementine Bauch",
             "username": "Samantha",
             "email": "Nathan@yesenia.net",
@@ -73,7 +74,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 4,
+            "id": uuidv4(),
             "name": "Patricia Lebsack",
             "username": "Karianne",
             "email": "Julianne.OConner@kory.org",
@@ -96,7 +97,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 5,
+            "id": uuidv4(),
             "name": "Chelsey Dietrich",
             "username": "Kamren",
             "email": "Lucio_Hettinger@annie.ca",
@@ -119,7 +120,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 6,
+            "id": uuidv4(),
             "name": "Mrs. Dennis Schulist",
             "username": "Leopoldo_Corkery",
             "email": "Karley_Dach@jasper.info",
@@ -142,7 +143,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 7,
+            "id": uuidv4(),
             "name": "Kurtis Weissnat",
             "username": "Elwyn.Skiles",
             "email": "Telly.Hoeger@billy.biz",
@@ -165,7 +166,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 8,
+            "id": uuidv4(),
             "name": "Nicholas Runolfsdottir V",
             "username": "Maxime_Nienow",
             "email": "Sherwood@rosamond.me",
@@ -188,7 +189,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 9,
+            "id": uuidv4(),
             "name": "Glenna Reichert",
             "username": "Delphine",
             "email": "Chaim_McDermott@dana.io",
@@ -211,7 +212,7 @@ const BorysovContainer = () => {
             }
         },
         {
-            "id": 10,
+            "id": uuidv4(),
             "name": "Clementina DuBuque",
             "username": "Moriah.Stanton",
             "email": "Rey.Padberg@karina.biz",
@@ -240,7 +241,7 @@ const BorysovContainer = () => {
     }
     const addUser = () => {
      setUser([...users, {
-        ...users[randomPerson],id:users.length+1
+        ...users[randomPerson],id:uuidv4()
      }])
     }
     return(

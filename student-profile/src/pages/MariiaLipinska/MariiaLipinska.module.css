@@ -1,0 +1,22 @@
+.container {
+    background-color: darkgrey;
+    height: 90vh;
+}
+h1{
+    text-align: center;
+}
+.picture {
+    margin-top: 50px;
+    max-width: 200px;
+    max-height: 250px;
+}
+
+.bigBlock{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.text{
+    width: 400px;
+    text-align: center;
+}

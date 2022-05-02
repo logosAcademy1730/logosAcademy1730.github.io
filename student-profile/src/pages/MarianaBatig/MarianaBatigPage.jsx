@@ -7,12 +7,14 @@ import {
 } from "react-router-dom";
 
 import MarianaBatig from "./MarianaBatig";
+import MainMap from "./MapWork/MainMap";
+import SecondMap from "./MapWork/SecondMap";
 const MarianaBatigPage = () => {
     return (
         <div className={styles.container}>
      <MarianaBatig />
             <Routes>
-                <Route path={"/form"} element={<h1>Hello!</h1>}/>
+                <Route path={"/form"} element={<SecondMap />}/>
             </Routes>
         </div>
 );

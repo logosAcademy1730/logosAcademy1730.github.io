@@ -20,7 +20,7 @@ import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
 import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
-// import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
+import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 
 const App = () => {

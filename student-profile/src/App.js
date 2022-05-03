@@ -14,7 +14,7 @@ import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import BorysovPage from "./pages/Info/BorysovPage";
-import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
+import VolodymyrHryhorievPage from "./pages/VolodymyrHryhoriev/VolodymyrHryhorievPage";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
@@ -69,7 +69,7 @@ const App = () => {
         {/*</Route>*/}
 
 
-        <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
+        <Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />
         <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />

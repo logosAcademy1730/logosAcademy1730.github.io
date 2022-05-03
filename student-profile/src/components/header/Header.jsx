@@ -11,8 +11,8 @@ const Header = () => {
       <Link className={styles.link} to={RouteConst.MENTOR}>
         Mentor
       </Link>
-      <Link className={styles.link} to={RouteConst.INFO}>
-        Info
+      <Link className={styles.link} to={RouteConst.BORYSOV}>
+        Borysov
       </Link>
       <Link className={styles.link} to={RouteConst.HRYHORIEV}>
         Hryhoriev
@@ -20,6 +20,12 @@ const Header = () => {
       <Link className={styles.link} to={RouteConst.MARIANA}>
         Mariana
       </Link>
+        <Link className={styles.link} to={RouteConst.ANDREW}>
+            Andrew
+        </Link>
+        <Link className={styles.link} to={RouteConst.MARIIA}>
+            Mariia
+        </Link>
     </div>
   );
 };

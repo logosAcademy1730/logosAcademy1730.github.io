@@ -1,28 +1,22 @@
-.container{
-
-    background-color: #0dec0d;
+.container {
+    background-color: darkgrey;
     height: 90vh;
 }
-
 h1{
     text-align: center;
 }
-
+.picture {
+    margin-top: 50px;
+    max-width: 200px;
+    max-height: 250px;
+}
 
 .bigBlock{
-    /*width: 500px;*/
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
-
-
-.containerOne img {
-    width: 320px;
-    height: 400px;
-}
-
-.containerTwo{
+.text{
     width: 400px;
+    text-align: center;
 }

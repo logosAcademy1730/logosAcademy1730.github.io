@@ -41,6 +41,7 @@ const App = () => {
       case RouteConst.MARIANA:
       case RouteConst.ANDREW:
       case RouteConst.MARIIA:
+      case RouteConst.BORYSOV:
         return false;
       default:
         return true;
@@ -72,6 +73,7 @@ const App = () => {
         <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
         <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
+        <Route path={RouteConst.BORYSOV} element={<BorysovPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />
         <Route path={RouteConst.MARIANA} element={<MarianaBatig />} />
         <Route path={RouteConst.MARIIA} element={<MariiaLipinska/>} />

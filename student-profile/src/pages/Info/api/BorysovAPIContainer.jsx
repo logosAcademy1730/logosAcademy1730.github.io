@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { usersAPI } from "./api";
-import { PostsAPI } from "../../../api/api";
+import { postsAPI } from "./api";
 const User = ({user,index}) => (
     <div key = {index}>
       <p>{user.name} asda</p>
@@ -21,7 +21,7 @@ const BorysovAPIContainer = () => {
         .finally(() => console.log('finally'))
   },[])
   const sendPost = () => {
-    PostsAPI.postNewPost({
+    postsAPI.postsUsers({
       mail:"true",
       body:"bar",
       userId:1

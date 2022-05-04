@@ -2,6 +2,7 @@ import React from "react";
 import {Button, Form, InputNumber, Schema} from "rsuite";
 import { useEffect, useRef, useState } from "react";
 import {Field} from "./FormRsuite";
+import s from './ContainerM.module.css'
 
 const ContainerM = () => {
 
@@ -35,10 +36,11 @@ const ContainerM = () => {
             .isRequired('This field is required.'),
         email:StringType()
             .isEmail('This field is email.')
+            .isRequired('This field is required.')
     });
     return (
-        <div >
-            <h1> BorysovPage</h1>
+        <div className={s.container}>
+            <h1> Mariana Form</h1>
             <Form
                 ref={formRef}
                 formValue={formValue}
@@ -52,7 +54,7 @@ const ContainerM = () => {
                 <Field name="position" label="Your position"/>
                 <Field name="email" label="Your email"/>
                 <Form.Group>
-                    <Button color="violet" appearance="ghost" onClick={handleSubmit}>
+                    <Button color="green" appearance="primary" onClick={handleSubmit}>
                         Submit
                     </Button>
                 </Form.Group>

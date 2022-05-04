@@ -21,6 +21,7 @@ import PrivateRoute from "./components/HOC/PrivateRoute";
 import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
+import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 
@@ -72,11 +73,10 @@ const App = () => {
         <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
         <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
-        <Route path={RouteConst.INFO} element={<Info />} />
         <Route path="*" element={<Navigate to={RouteConst.NOT_FOUND_PAGE} />} />
         <Route path={RouteConst.MARIANA_Nested} element={<MarianaBatigPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />
-        <Route path={RouteConst.MARIANA} element={<MarianaBatig />} />
+        <Route path={RouteConst.MARIANA} element={<MarianaBatig/>} />
         <Route path={RouteConst.MARIIA} element={<MariiaLipinska/>} />
         <Route path={RouteConst.MARIIA_Nested} element={<LipinskaPage/>} />
 

@@ -7,7 +7,7 @@ export const RouteConst = {
     BORYSOV_Nested : "/Borysov/*",
     HRYHORIEV: "/hryhoriev",
     MARIANA: "/mariana",
-    MARIANA_Nested : "/mariana/*"
+    MARIANA_Nested : "/mariana/*",
     ANDREW:"/andrew",
     MARIIA: "/mariia",
     MARIIA_Nested:"/mariia/*"

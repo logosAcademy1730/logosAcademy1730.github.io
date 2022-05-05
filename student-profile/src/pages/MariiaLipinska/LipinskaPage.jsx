@@ -1,7 +1,7 @@
 import React from "react";
 import MariiaLipinska from "./MariiaLipinska";
 import { Routes, Route } from "react-router-dom";
-
+import LipinskaForm from "./Form_homework/Lipinska_form";
 
 const LipinskaPage = () => {
 
@@ -9,7 +9,7 @@ const LipinskaPage = () => {
         <div>
             <MariiaLipinska />
             <Routes>
-                <Route path={"/form"} element={<h1>Hello!</h1>}/>
+                <Route path={"/form"} element={<LipinskaForm/>}/>
             </Routes>
         </div>
 

@@ -1,0 +1,33 @@
+.container{
+    justify-content: center;
+    display: flex;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 15px 0;
+    height: 100px;
+    width: 40%;
+    background-color: yellow;
+}
+.addButton{
+    cursor: pointer;
+    height: 50px;
+    width: 7%;
+    line-height: 50px;
+    background-color: red;
+    border-radius: 15px;
+}
+.deleteButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    width: 10%;
+    margin-right: 10px;
+    background-color: salmon;
+    border-radius: 15px;
+}

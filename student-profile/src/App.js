@@ -21,7 +21,7 @@ import PrivateRoute from "./components/HOC/PrivateRoute";
 import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
-import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+
 import { Provider } from "react-redux";
 import store from "./redux/store";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";

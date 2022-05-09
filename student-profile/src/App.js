@@ -21,6 +21,9 @@ import PrivateRoute from "./components/HOC/PrivateRoute";
 import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
+import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 
@@ -75,7 +78,7 @@ const App = () => {
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.BORYSOV} element={<BorysovPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />
-        <Route path={RouteConst.MARIANA} element={<MarianaBatig />} />
+        <Route path={RouteConst.MARIANA} element={<MarianaBatig/>} />
         <Route path={RouteConst.MARIIA} element={<MariiaLipinska/>} />
         <Route path={RouteConst.MARIIA_Nested} element={<LipinskaPage/>} />
 
@@ -86,9 +89,11 @@ const App = () => {
 };
 
 const AppContainer = () => (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
 );
 
 export default AppContainer;

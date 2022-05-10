@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { PostsAPI, UsersAPI } from "../../api/api";
+import { actionsUsers, actionsUsersTypes } from "../../redux/actionCreator/actionsUsers";
+import { useDispatch, useSelector } from "react-redux";
 
 
-const User = ({user, index, deleteUser}) =>(
+const User = ({user, index}) =>(
     <div
         style={{color: "black"}}
         key={index}
-        onClick={()=>deleteUser(index)}>
+    >
         <p>{user.name}</p>
         <p>{user.phone}</p>
         <p>{user.email}</p>
@@ -15,83 +17,31 @@ const User = ({user, index, deleteUser}) =>(
     </div>
 )
 
-
 const MentorPage = () => {
-const [users, setUsers] = useState([]);
-const [error, setError] = useState("");
-
-
-const deleteUser = (index) => {
-    setUsers(users.filter((item, i) => i!== index && item))
-}
-
-const getPosts = async () => {
-    try{
-        const response = await UsersAPI.getUsers()
-        setUsers(response.data)
-    } catch (e) {
-        console.log(e)
-    } finally {
-        console.log("finally")
-    }
-}
+// const [users, setUsers] = useState([]);
+// const [error, setError] = useState("");
+const dispatch = useDispatch();
+const users = useSelector((state) => state.usersReducer.users);
+const error = useSelector((state) => state.usersReducer.errorUsers);
 
 useEffect(()=>{
-    console.log(users)
-},[users])
+    console.log("users", users);
+}, [users])
+
 
     useEffect( ()=>{
         // getPosts();
     UsersAPI.getUsers()
-        .then((res) => res.status === 200 && setUsers(res.data))
-        .catch((e) => setError(e.response.data))
+        .then((res) => res.status === 200 && dispatch(actionsUsers.setUsers(res.data)))
+        .catch((e) => dispatch(actionsUsers.setError("Error while getting users")))
         .finally(()=> console.log("finally"))
-
-
 }, [])
-
-    const sendPost = () => {
-        console.log("click")
-    const newUser = {
-        id: 1,
-        name: "Leanne Graham",
-        username: "Bret",
-        email: "Sincere@april.biz",
-        address: {
-            street: "Kulas Light",
-            suite: "Apt. 556",
-            city: "Gwenborough",
-            zipcode: "92998-3874",
-            geo: {
-                lat: "-37.3159",
-                lng: "81.1496"
-            }
-        },
-        phone: "1-770-736-8031 x56442",
-        website: "hildegard.org",
-        company: {
-            name: "Romaguera-Crona",
-            catchPhrase: "Multi-layered client-server neural-net",
-            bs: "harness real-time e-markets"
-        }
-    };
-        setUsers([ newUser, ...users]);
-
-        // PostsAPI.postNewPost({
-        //     title: 'foo',
-        //     body: 'bar',
-        //     userId: 1,
-        // })
-        //     .then((res) => console.log(res))
-        //     .catch((e) => console.log(e))
-        //     .finally(()=> console.log("finally"))
-    }
-
 
     return (
      <div>
-         <div onClick={sendPost}>POST</div>
-         {users?.length > 0 && users.map((user, index) => <User key={index} user={user} index={index} deleteUser={deleteUser}/>)}
+         {/*<div onClick={sendPost}>POST</div>*/}
+         {users?.map((user, index) => <User key={index} user={user} index={index}/>)}
+         {error && <p>{error}</p>}
          {/*{error !== "" && <span>{error}</span>}*/}
      </div>
  )

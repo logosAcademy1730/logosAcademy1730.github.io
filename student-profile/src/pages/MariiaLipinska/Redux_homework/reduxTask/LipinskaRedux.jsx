@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { usersAPI } from "../api/api";
-import { lipinskaUsers } from "../redux/actionLipinska/actionLipinska";
-import { actionsUsers } from "../../../redux/actionCreator/actionsUsers";
+import { usersAPI } from "../../../../api/api";
+import { lipinskaUsers } from "../../Redux_homework/actionLipinska/actionLipinska";
+import { actionsUsers } from "../../../../redux/actionCreator/actionsUsers";
 
 const User = ({user, index}) =>(
     <div

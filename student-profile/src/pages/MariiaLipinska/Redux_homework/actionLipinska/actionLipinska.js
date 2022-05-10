@@ -3,7 +3,7 @@ export const lipinskaUsersTypes = {
     SET_ERROR: "SET_ERROR"
 }
 
-export const lipinskaUsers = {
+export const lipinskaUsers =  {
     setUsers: (users) => ({type:lipinskaUsersTypes.SET_USERS, payload: users}),
     setError: (error) => ({type:lipinskaUsersTypes.SET_ERROR, payload: error}),
 }

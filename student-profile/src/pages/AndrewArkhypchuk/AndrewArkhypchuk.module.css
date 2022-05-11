@@ -34,7 +34,26 @@ container{
 }
 .list{
     border:3px solid whitesmoke;
-    width:300px;
+    width:600px;
     border-radius: 10px;
     margin: 0 auto;
+    font-size:22px;
+    color:white;
+}
+.button{
+    width:140px;
+    height:50px;
+    background-color:darkslategrey;
+    border:2px solid white;
+    outline:none;
+    margin:10px;
+    color:white;
+    border-radius: 5px;
+    font-size: 23px;
+    transition-duration: 0.3s;
+}
+.button:hover{
+    transform: scale(1.15);
+    color:darkslategrey;
+    background-color: white;
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./AndrewArkhypchuk.module.css";
 import myphoto from "./Andrew.jpg";
 import {useState } from "react";
@@ -273,8 +274,8 @@ const AndrewArkhypchuk = () => {
 
             }) }
             </div>
-            <button  onClick={add}>Add User</button>
-            <button onClick={deleteUser}>Delete User</button>
+            <button className={classes.button}  onClick={add}>Add User</button>
+            <button className={classes.button} onClick={deleteUser}>Delete User</button>
         </div>
 );
 };

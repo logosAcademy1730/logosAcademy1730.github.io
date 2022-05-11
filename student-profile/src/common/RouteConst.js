@@ -9,7 +9,7 @@ export const RouteConst = {
     HRYHORIEV_Nested: "/hryhoriev/*",
     MARIANA: "/mariana",
     MARIANA_Nested : "/mariana/*",
-    ANDREW:"/andrew",
+    ANDREW:"/andrew/*",
     MARIIA: "/mariia",
     MARIIA_Nested:"/mariia/*"
 }

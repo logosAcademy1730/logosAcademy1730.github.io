@@ -1,6 +1,6 @@
 
 import "./App.css";
-import "rsuite/dist/rsuite.min.css";
+ import "rsuite/dist/rsuite.min.css";
 import MainPage from "./pages/main/MainPage";
 import {
   BrowserRouter,
@@ -24,6 +24,7 @@ import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import AndrewContainer from "./pages/AndrewArkhypchuk/AndrewContainer";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 
@@ -73,7 +74,7 @@ const App = () => {
 
 
         <Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />
-        <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
+        <Route path={RouteConst.ANDREW} element={<AndrewContainer/>} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.MARIANA_Nested} element={<MarianaBatigPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />

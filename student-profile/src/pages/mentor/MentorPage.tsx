@@ -8,7 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { UserInterface } from "../../common/types";
 import {AppStateType} from "../../redux/store";
-
+import styles from "./MentorPage.module.scss"
 interface Props {
   user: UserInterface
   index: number,
@@ -49,7 +49,7 @@ const MentorPage = () => {
     console.log(name)
   }
   return (
-    <div>
+    <div className={styles.container}>
       {/*<div onClick={sendPost}>POST</div>*/}
       {users?.map((user: any, index:number) => (
         <User key={index} user={user} index={index} getUserName={getUserName}/>

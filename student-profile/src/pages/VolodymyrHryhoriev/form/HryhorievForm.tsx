@@ -1,8 +1,6 @@
 import { Button, Form, Schema, InputNumber } from "rsuite";
 import { Field } from "../../../components/RSUITE components/rsuiteComp";
-import { Routes, Route, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import VolodymyrHryhoriev from "../VolodymyrHryhoriev";
 
 const HryhorievForm = () => {
     const { StringType, NumberType } = Schema.Types;
@@ -23,6 +21,7 @@ const HryhorievForm = () => {
         // if (!formRef.current.check()) {
         //     return;
         // }
+        // @ts-ignore
         document.querySelector('h1').innerHTML = `${formValue.name} ${formValue.surname} page`;
     };
 
@@ -39,16 +38,21 @@ const HryhorievForm = () => {
             .isRequired('This field is required.')
             .isEmail("NEEED EMAIL")
     });
+
     return (
         <Form
+            // @ts-ignore
             ref={formRef}
             formValue={formValue}
+            // @ts-ignore
             onChange={setFormValue}
             onCheck={setFormError}
             formError={formError}
             model={model}
         >
+            {/*@ts-ignore*/}
             <Field name="name" label="Your name"/>
+            {/*@ts-ignore*/}
             <Field name="surname" label="Your surname"/>
 
             <Form.Group>

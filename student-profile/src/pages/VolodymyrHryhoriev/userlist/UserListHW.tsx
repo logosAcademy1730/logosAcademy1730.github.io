@@ -235,8 +235,7 @@ const UserListHW = () => {
         }
     ])
 
-    const deleteUser = (id) => {
-            // setUser(users => users.filter(element => console.log('ffg') ));
+    const deleteUser = (id: number) => {
             setUser(users => users.filter(element => element.id !== id) )
     }
 
@@ -246,7 +245,7 @@ const UserListHW = () => {
 
     return (
         <div>
-            {users.map((user, index) => <UserList user={user} key={user.id} deleteUser={deleteUser}/>)}
+            {users.map((user) => <UserList user={user} key={user.id} deleteUser={deleteUser}/>)}
         </div>
     )
 }

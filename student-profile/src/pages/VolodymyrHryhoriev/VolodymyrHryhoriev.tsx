@@ -1,9 +1,6 @@
 
 import styles from "./VolodymyrHryhoriev.module.css"
 import photo from "./images/Hryhoriev.jpg"
-import {Route, Routes} from "react-router-dom";
-import UserListHW from "./userlist/UserListHW";
-import {useEffect} from "react";
 
 const VolodymyrHryhoriev = () => {
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 import HryhorievEndpoints from "./HryhorievEndpoints";
-import Endpoints from "../../../api/Endpoints";
 
 const {REACT_APP_API} = process.env
 
@@ -18,7 +17,7 @@ export const HryhorievPostsAndCommentsAPI = {
 }
 
 export const HryhorievPutPosts = {
-    putNewPost(put){
-        return hryhorievInstance.put(HryhorievEndpoints.PUT_POSTS, put )
+    putNewPost(){
+        return hryhorievInstance.put(HryhorievEndpoints.PUT_POSTS )
     }
 }

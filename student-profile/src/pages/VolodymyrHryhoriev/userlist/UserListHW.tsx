@@ -1,11 +1,10 @@
-import React from "react";
-import classes from "./AndrewArkhypchuk.module.css";
-import myphoto from "./Andrew.jpg";
-import {useState } from "react";
-const AndrewArkhypchuk = () => {
-    const[users,setUsers] =useState([
+import UserList from "./UserList";
+import React, {useEffect, useState} from "react";
+
+const UserListHW = () => {
+    const [users, setUser] = useState([
         {
-            "id": 1,
+            id: 1,
             "name": "Leanne Graham",
             "username": "Bret",
             "email": "Sincere@april.biz",
@@ -28,7 +27,7 @@ const AndrewArkhypchuk = () => {
             }
         },
         {
-            "id": 2,
+            id: 2,
             "name": "Ervin Howell",
             "username": "Antonette",
             "email": "Shanna@melissa.tv",
@@ -51,7 +50,7 @@ const AndrewArkhypchuk = () => {
             }
         },
         {
-            "id": 3,
+            id: 3,
             "name": "Clementine Bauch",
             "username": "Samantha",
             "email": "Nathan@yesenia.net",
@@ -74,7 +73,7 @@ const AndrewArkhypchuk = () => {
             }
         },
         {
-            "id": 4,
+            id: 4,
             "name": "Patricia Lebsack",
             "username": "Karianne",
             "email": "Julianne.OConner@kory.org",
@@ -97,7 +96,7 @@ const AndrewArkhypchuk = () => {
             }
         },
         {
-            "id": 5,
+            id: 5,
             "name": "Chelsey Dietrich",
             "username": "Kamren",
             "email": "Lucio_Hettinger@annie.ca",
@@ -235,49 +234,22 @@ const AndrewArkhypchuk = () => {
             }
         }
     ])
-    function getRandomInt(min =1, max=10) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min) + min);
+
+    const deleteUser = (id: number) => {
+            setUser(users => users.filter(element => element.id !== id) )
     }
-    function add(){
-       console.log(getRandomInt())
-        let List = [...users];
-       List.push(users[getRandomInt()])
-        setUsers(List)
-    }
-    function deleteUser(){
-        console.log(getRandomInt())
-        let List = [...users];
-        List.pop()
-        setUsers(List)
-    }
+
+    useEffect(() => {
+        console.log(users)
+    }, [deleteUser])
+
     return (
         <div>
-        <div className={classes.container}>
-            <h1>Andrew  page</h1>
+            {users.map((user) => <UserList user={user} key={user.id} deleteUser={deleteUser}/>)}
         </div>
-            <div >
-            <div>
-                <img alt="my foto" className={classes.img} src={myphoto} />
-            </div>
-            <div>
-    <p className={classes.white}> Hi my name is Andrew,a have 8 months experience with Front End development,
-    Can be a great developer in your Company..!</p>
-            </div>
+    )
+}
 
-            </div>
-            <h3 className={classes.white}>Users</h3>
-            <div className={classes.list}>
-            { users.map((user)=>{
-              return( <div>{user.name}</div>)
 
-            }) }
-            </div>
-            <button className={classes.button}  onClick={add}>Add User</button>
-            <button className={classes.button} onClick={deleteUser}>Delete User</button>
-        </div>
-);
-};
 
-export default AndrewArkhypchuk;
+export default UserListHW;

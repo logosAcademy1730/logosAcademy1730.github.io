@@ -1,9 +1,8 @@
-import React from "react";
-import classes from "./AndrewArkhypchuk.module.css";
-import myphoto from "./Andrew.jpg";
-import {useState } from "react";
-const AndrewArkhypchuk = () => {
-    const[users,setUsers] =useState([
+import React, {useEffect, useState} from "react";
+import MainMap from "./MainMap";
+import m from "./m.module.css";
+const SecondMap = () => {
+    const [users,setUser] = useState([
         {
             "id": 1,
             "name": "Leanne Graham",
@@ -210,74 +209,24 @@ const AndrewArkhypchuk = () => {
                 "catchPhrase": "Switchable contextually-based project",
                 "bs": "aggregate real-time technologies"
             }
-        },
-        {
-            "id": 10,
-            "name": "Clementina DuBuque",
-            "username": "Moriah.Stanton",
-            "email": "Rey.Padberg@karina.biz",
-            "address": {
-                "street": "Kattie Turnpike",
-                "suite": "Suite 198",
-                "city": "Lebsackbury",
-                "zipcode": "31428-2261",
-                "geo": {
-                    "lat": "-38.2386",
-                    "lng": "57.2232"
-                }
-            },
-            "phone": "024-648-3804",
-            "website": "ambrose.net",
-            "company": {
-                "name": "Hoeger LLC",
-                "catchPhrase": "Centralized empowering task-force",
-                "bs": "target end-to-end models"
-            }
+
         }
     ])
-    function getRandomInt(min =1, max=10) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min) + min);
+    const randomPerson = Math.floor(Math.random() * users.length)
+    const deleteUser = (id) => {
+        setUser(users => users.filter(user =>  user.id  !== id))
     }
-    function add(){
-       console.log(getRandomInt())
-        let List = [...users];
-       List.push(users[getRandomInt()])
-        setUsers(List)
+    const addUser = () => {
+        setUser([...users, {
+            ...users[randomPerson],id:users.length+1
+        }])
     }
-    function deleteUser(){
-        console.log(getRandomInt())
-        let List = [...users];
-        List.pop()
-        setUsers(List)
-    }
-    return (
+    return(
         <div>
-        <div className={classes.container}>
-            <h1>Andrew  page</h1>
+            <div onClick={addUser} className={m.addButton}>Add</div>
+            {users.map((user,index) => <MainMap place={index + 1} id={user.id} user={user} key={user.id}  deleteUser={deleteUser}/>)}
         </div>
-            <div >
-            <div>
-                <img alt="my foto" className={classes.img} src={myphoto} />
-            </div>
-            <div>
-    <p className={classes.white}> Hi my name is Andrew,a have 8 months experience with Front End development,
-    Can be a great developer in your Company..!</p>
-            </div>
+    )
+}
 
-            </div>
-            <h3 className={classes.white}>Users</h3>
-            <div className={classes.list}>
-            { users.map((user)=>{
-              return( <div>{user.name}</div>)
-
-            }) }
-            </div>
-            <button className={classes.button}  onClick={add}>Add User</button>
-            <button className={classes.button} onClick={deleteUser}>Delete User</button>
-        </div>
-);
-};
-
-export default AndrewArkhypchuk;
+export default  SecondMap

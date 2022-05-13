@@ -14,16 +14,15 @@ import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import BorysovPage from "./pages/Info/BorysovPage";
-import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
-import MarianaBatigPage from "./pages/MarianaBatig/MarianaBatigPage";
-import { useEffect } from "react";
+import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
 import PrivateRoute from "./components/HOC/PrivateRoute";
-import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
-import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import AndrewContainer from "./pages/AndrewArkhypchuk/AndrewContainer";
+import VolodymyrHryhorievPage from "./pages/VolodymyrHryhoriev/VolodymyrHryhorievPage";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 
@@ -40,10 +39,11 @@ const App = () => {
   const showNavbar = () => {
     switch (path) {
       case RouteConst.MENTOR:
-      case RouteConst.HRYHORIEV:
+      case RouteConst.HRYHORIEV_Nested:
       case RouteConst.MARIANA:
       case RouteConst.ANDREW:
       case RouteConst.MARIIA:
+      case RouteConst.BORYSOV:
         return false;
       default:
         return true;
@@ -72,10 +72,10 @@ const App = () => {
         {/*</Route>*/}
 
 
-        <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
-        <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
+        <Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />
+        <Route path={RouteConst.ANDREW} element={<AndrewContainer/>} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
-        <Route path={RouteConst.MARIANA_Nested} element={<MarianaBatigPage />} />
+        <Route path={RouteConst.BORYSOV} element={<BorysovPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />
         <Route path={RouteConst.MARIANA} element={<MarianaBatig/>} />
         <Route path={RouteConst.MARIIA} element={<MariiaLipinska/>} />

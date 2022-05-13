@@ -1,10 +1,12 @@
+
 import styles from "./VolodymyrHryhoriev.module.css"
 import photo from "./images/Hryhoriev.jpg"
 
 const VolodymyrHryhoriev = () => {
+
     return (
         <div className={styles.container}>
-            <h1>Volodia Hryhoriev page</h1>
+            <h1>Volodymyr Hryhoriev page</h1>
             <div className={styles.about}>
                 <img src={photo} alt="img"/>
                 <p>Hi, I'm a person who has a big interest in programming. Now, I'm trying to improve my skills. Ready to learn and gain experience.

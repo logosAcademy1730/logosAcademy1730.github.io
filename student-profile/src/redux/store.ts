@@ -2,10 +2,12 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import usersReducer from "./reducers/usersReducer";
+import borysovReducer from "../pages/Info/redux/reducers/borysovReducers";
 import HryhorievPaCReducer from "../pages/VolodymyrHryhoriev/HryhorievRedux/HryhorievPaCReducer";
 
 const rootReducer = combineReducers({
     usersReducer: usersReducer,
+    borysovReducer: borysovReducer,
     HryhorievPaCReducer : HryhorievPaCReducer,
 })
 type rootReducerType = typeof rootReducer;

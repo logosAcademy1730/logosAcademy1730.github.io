@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserList = (props) => {
+const UserList = (props: any) => {
     return(
         <div>
             <div>

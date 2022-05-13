@@ -3,12 +3,19 @@ import VolodymyrHryhoriev from "./VolodymyrHryhoriev";
 import UserListHW from "./userlist/UserListHW";
 import { Routes, Route } from "react-router-dom";
 import HryhorievForm from "./form/HryhorievForm";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {HryhorievPostsAndCommentsAPI, HryhorievPutPosts} from "./apiHryhoriev/HryhorievApi";
 import {useDispatch, useSelector} from "react-redux";
-import {actionsPaCTypes, actionPaC} from "./HryhorievRedux/actionPaC.js";
+import {actionPaC} from "../VolodymyrHryhoriev/HryhorievRedux/actionPaC";
+import { HryhorievPostsAndComentsType } from "./types/HryhorievTypes";
+import {AppStateType} from "../../redux/store";
 
-const HryhorievPostsAndComents = ({element, index}) => (
+interface Props {
+    element: HryhorievPostsAndComentsType,
+    index: number
+}
+
+const HryhorievPostsAndComents = ({element, index} :Props) => (
     <div
         style={{color: "black"}}
         key={index}>
@@ -22,31 +29,30 @@ const VolodymyrHryhorievPage = () => {
 
 
 
-    const postsAndComents = useSelector((state) => state.HryhorievPaCReducer.postsAndComents);
-    const error = useSelector((state) => state.HryhorievPaCReducer.errorPaC);
+    // @ts-ignore
+    const postsAndComents = useSelector((state:AppStateType) => state.HryhorievPaCReducer.postsAndComents);
+    // @ts-ignore
+    const error = useSelector((state:AppStateType) => state.HryhorievPaCReducer.errorPaC);
     const dispatch = useDispatch();
     const {REACT_APP_API} = process.env
 
     useEffect( ()=>{
-        // getPosts();
         HryhorievPostsAndCommentsAPI.getPostsAndComents()
             .then((res) => res.status === 200 && dispatch(actionPaC.setPostsComents(res.data)))
-            .catch((e) => dispatch(actionPaC.setError("Error while getting posts and coments")))
+            .catch(() => dispatch(actionPaC.setError("Error while getting posts and coments")))
             .finally(()=> console.log("finally"))
     }, [])
     useEffect( ()=>{
-        // getPosts();
         HryhorievPutPosts.putNewPost()
             .then((res) => console.log(res))
-            .catch((e) => actionPaC.setError("Error while getting posts"))
+            .catch(() => actionPaC.setError("Error while getting posts"))
             .finally(()=> console.log("finally"))
     }, [])
 
     return (
         <div>
     <VolodymyrHryhoriev />
-            {console.log(postsAndComents)}
-            {postsAndComents?.map((element, index) => <HryhorievPostsAndComents key={index} element={element} index={index}/>)}
+            {postsAndComents?.map((element: any, index: number) => <HryhorievPostsAndComents key={index} element={element} index={index}/>)}
             {error && <p>{error}</p>}
             <Routes>
                 <Route path={"/userList"} element={<UserListHW />}/>

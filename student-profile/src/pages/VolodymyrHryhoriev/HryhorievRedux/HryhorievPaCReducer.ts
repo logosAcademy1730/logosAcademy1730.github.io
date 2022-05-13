@@ -1,11 +1,16 @@
 import {actionsPaCTypes} from "./actionPaC";
+import {HryhorievPostsAndComentsType, PaCReducerActionTypes} from "../types/HryhorievTypes";
 
-const initialState = {
-    postsAndComents: [],
-    errorPaC: ""
+interface PaCInitialState {
+    postsAndComents?: HryhorievPostsAndComentsType[];
+    errorPaC: string;
 }
 
-const HryhorievPaCReducer = (state = initialState, action) => {
+const initialState: PaCInitialState = {
+    errorPaC: "",
+};
+
+const HryhorievPaCReducer = (state = initialState, action: PaCReducerActionTypes) => {
     switch (action.type) {
         case actionsPaCTypes.SET_POSTS_COMENTS:
             return {

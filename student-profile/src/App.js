@@ -24,6 +24,7 @@ import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import AndrewContainer from "./pages/AndrewArkhypchuk/AndrewContainer";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 
@@ -40,7 +41,7 @@ const App = () => {
   const showNavbar = () => {
     switch (path) {
       case RouteConst.MENTOR:
-      case RouteConst.HRYHORIEV:
+      case RouteConst.HRYHORIEV_Nested:
       case RouteConst.MARIANA:
       case RouteConst.ANDREW:
       case RouteConst.MARIIA:
@@ -73,8 +74,8 @@ const App = () => {
         {/*</Route>*/}
 
 
-        <Route path={RouteConst.HRYHORIEV} element={<VolodymyrHryhoriev />} />
-        <Route path={RouteConst.ANDREW} element={<AndrewArkhypchuk />} />
+        <Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />
+        <Route path={RouteConst.ANDREW} element={<AndrewContainer/>} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.BORYSOV} element={<BorysovPage />} />
         <Route path={RouteConst.BORYSOV_Nested} element={<BorysovPage />} />

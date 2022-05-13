@@ -1,4 +1,5 @@
-import {borysovUsersTypes} from "../actionBorysov/actionBorysov";
+import { borysovUsers, borysovUsersTypes } from "../actionBorysov/actionBorysov";
+import { usersAPI } from "../../api/api";
 
 const initialState = {
   users: [],
@@ -22,6 +23,18 @@ const borysovReducer = (state=initialState, action) => {
       return state
   }
 
+}
+
+export const getUsers = () => (dispatch) =>{
+  usersAPI.getUsers()
+    .then((response) => {
+      if(response.status == 200){
+        debugger
+        dispatch(borysovUsers.setUsers(response.data))
+      }else{
+        console.log('mistake')
+      }
+  })
 }
 
 export default borysovReducer;

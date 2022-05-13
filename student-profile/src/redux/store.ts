@@ -7,7 +7,7 @@ import HryhorievPaCReducer from "../pages/VolodymyrHryhoriev/HryhorievRedux/Hryh
 
 const rootReducer = combineReducers({
     usersReducer: usersReducer,
-    borysovReducer: borysovReducer
+    borysovReducer: borysovReducer,
     HryhorievPaCReducer : HryhorievPaCReducer,
 })
 type rootReducerType = typeof rootReducer;

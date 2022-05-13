@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { usersAPI } from "../api/api";
-import { borysovUsers } from "../redux/actionBorysov/actionBorysov";
-import { actionsUsers } from "../../../redux/actionCreator/actionsUsers";
+import { getUsers } from "../redux/reducers/borysovReducers";
 
 const User = ({user, index}) =>(
   <div
@@ -23,10 +21,7 @@ const BorysovRedux = () => {
   const error = useSelector((state) => state.borysovReducer.errorUsers)
 
   useEffect(() => {
-    usersAPI.getUsers()
-      .then((res) => res.status === 200 && dispatch(borysovUsers.setUsers(res.data)))
-      .catch((e) => dispatch(actionsUsers.setError("Error while getting users")))
-      .finally(() => console.log("finally"))
+   dispatch(getUsers())
   }, [])
 
   return (

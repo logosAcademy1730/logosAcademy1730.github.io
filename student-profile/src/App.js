@@ -14,17 +14,15 @@ import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import BorysovPage from "./pages/Info/BorysovPage";
-import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
-import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
-import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import AndrewContainer from "./pages/AndrewArkhypchuk/AndrewContainer";
+import VolodymyrHryhorievPage from "./pages/VolodymyrHryhoriev/VolodymyrHryhorievPage";
 // import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
 

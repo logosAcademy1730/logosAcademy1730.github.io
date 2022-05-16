@@ -14,8 +14,11 @@ import Header from "./components/header/Header";
 import { RouteConst } from "./common/RouteConst";
 import NotFoundPage from "./pages/404/NotFoundPage";
 import BorysovPage from "./pages/Info/BorysovPage";
+import VolodymyrHryhoriev from "./pages/VolodymyrHryhoriev/VolodymyrHryhoriev";
 import MarianaBatig from "./pages/MarianaBatig/MarianaBatig";
+import { useEffect } from "react";
 import PrivateRoute from "./components/HOC/PrivateRoute";
+import AndrewArkhypchuk from "./pages/AndrewArkhypchuk/AndrewArkhypchuk";
 import MariiaLipinska from "./pages/MariiaLipinska/MariiaLipinska";
 import LipinskaPage from "./pages/MariiaLipinska/LipinskaPage";
 
@@ -43,7 +46,6 @@ const App = () => {
       case RouteConst.MARIANA:
       case RouteConst.ANDREW:
       case RouteConst.MARIIA:
-      case RouteConst.BORYSOV:
         return false;
       default:
         return true;

@@ -1,5 +1,6 @@
 import styles from "./MariiaLipinska.module.css";
 import photo from "./Mariia.jpg"
+
 const MariiaLipinska = () => {
     return (
         <div className={styles.container}>

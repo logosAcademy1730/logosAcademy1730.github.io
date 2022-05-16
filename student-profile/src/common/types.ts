@@ -33,6 +33,17 @@ export interface UserInterface extends Address {
   company: Company
 }
 
+export interface MyInfo {
+  name: string;
+  position: string;
+  id: string
+}
+
+export interface Admin {
+  name: string,
+  role: string
+}
+
 export type UserReducerActionTypes = ReturnType<
   PropertiesTypes<typeof actionsUsers>
   >

@@ -36,8 +36,9 @@ const App = () => {
   //   localStorage.setItem("user", JSON.stringify({ role: "admin" }));
   // }, []);
 
-  // const user = JSON.parse(localStorage.getItem("user"));
-  const user = { role: "admin" };
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user)
+  // const user = { role: "admin" };
   // console.log(user);
   const showNavbar = () => {
     switch (path) {
@@ -57,9 +58,9 @@ const App = () => {
       {showNavbar() && <Header />}
       <Routes>
         <Route path={RouteConst.MAIN} element={<MainPage />} />
-
+        <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
         <Route element={<PrivateRoute isAllowed={user?.role === "admin"}/>}>
-          <Route path={RouteConst.MENTOR_Nested} element={<MentorPage />} />
+          <Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />
         </Route>
 
         {/*<Route*/}
@@ -74,7 +75,7 @@ const App = () => {
         {/*</Route>*/}
 
 
-        <Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />
+        {/*<Route path={RouteConst.HRYHORIEV_Nested} element={<VolodymyrHryhorievPage />} />*/}
         <Route path={RouteConst.ANDREW} element={<AndrewContainer/>} />
         <Route path={RouteConst.NOT_FOUND_PAGE} element={<NotFoundPage />} />
         <Route path={RouteConst.BORYSOV} element={<BorysovPage />} />

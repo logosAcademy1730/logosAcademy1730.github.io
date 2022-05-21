@@ -22,6 +22,12 @@ const usersReducer = (state = initialState, action: UserReducerActionTypes)=> {
         ...state,
         errorUsers: action.payload,
       };
+    case actionsUsersTypes.SET_MY_INFO:
+      return {
+        ...state,
+        myInfo: action.payload
+      }
+
     default:
       return state;
   }

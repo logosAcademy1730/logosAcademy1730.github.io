@@ -1,5 +1,6 @@
 {
   "name": "student-profile",
+  "homepage": "https://logosAcademy1730.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
     "axios": "^0.27.2",
+    "firebase": "^9.8.1",
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -26,6 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -50,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "prettier": "2.6.2"
   }
 }

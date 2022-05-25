@@ -9,7 +9,7 @@ import HryhorievPaCReducer from "../pages/VolodymyrHryhoriev/HryhorievRedux/Hryh
 
 const rootReducer = combineReducers({
     usersReducer: usersReducer,
-    lipinskaReducer: lipinskaReducer
+    lipinskaReducer: lipinskaReducer,
     borysovReducer: borysovReducer,
     HryhorievPaCReducer : HryhorievPaCReducer,
 })

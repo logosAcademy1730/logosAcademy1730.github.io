@@ -15,7 +15,7 @@ export const usersAPI = {
     }
 }
 export const postsAPI = {
-    postsUsers(post){
+    postsUsers(post:any){
         return instance.post(Endpoints.POSTS,post)
     }
 }
